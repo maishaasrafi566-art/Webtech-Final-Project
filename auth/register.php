@@ -1,57 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Employee Registration</title>
+    <title>Register | HRM System</title>
+    <link rel="stylesheet" href="../assets/css/register.css">
 </head>
 <body>
 
-    <h2>Employee Registration</h2>
-    <p>Create a new HRM account</p>
+<div class="register-wrapper">
+    <div class="register-box">
 
-    <form method="post" action="">
+        <h2 class="register-title">Employee Registration</h2>
+        <p class="register-subtitle">Create a new HRM account</p>
 
-        <label>Full Name</label><br>
-        <input type="text" name="name" required><br><br>
+        <?php if ($error): ?>
+            <div class="error-msg"><?php echo $error; ?></div>
+        <?php endif; ?>
 
-        <label>Email Address</label><br>
-        <input type="email" name="email" required><br><br>
+        <?php if ($success): ?>
+            <div class="success-msg">
+                <?php echo $success; ?><br>
+                <a href="login.php">Login Now</a>
+            </div>
+        <?php endif; ?>
 
-        <label>Phone Number</label><br>
-        <input type="text" name="phone"><br><br>
+        <form method="POST" class="register-form">
 
-        <label>Address</label><br>
-        <textarea name="address"></textarea><br><br>
+            <input class="form-input" type="text" name="name" placeholder="Full Name" required>
 
-        <label>Gender</label><br>
-        <select name="gender" required>
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select><br><br>
+            <input class="form-input" type="email" name="email" placeholder="Email Address" required>
 
-        <label>Date of Birth</label><br>
-        <input type="date" name="dob" required><br><br>
+            <input class="form-input" type="text" name="phone" placeholder="Phone Number">
 
-        <label>Role</label><br>
-        <select name="role" required>
-            <option value="employee">Employee</option>
-            <option value="admin">Admin</option>
-        </select><br><br>
+            <textarea class="form-textarea" name="address" placeholder="Address"></textarea>
 
-        <label>Password</label><br>
-        <input type="password" name="password" required><br><br>
+            <select class="form-input" name="gender" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
 
-        <label>Confirm Password</label><br>
-        <input type="password" name="confirm_password" required><br><br>
+            <input class="form-input" type="date" name="dob" required>
 
-        <button type="submit">Register</button>
+            <select class="form-input" name="role" required>
+                <option value="employee">Employee</option>
+                <option value="admin">Admin</option>
+            </select>
 
-    </form>
+            <input class="form-input" type="password" name="password" placeholder="Password" required>
 
-    <br>
-    <a href="login.php">Already have an account? Login</a>
+            <input class="form-input" type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+            <button class="register-btn" type="submit">Register</button>
+        </form>
+
+        <div class="register-links">
+            <a href="login.php">Already have an account? Login</a>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
