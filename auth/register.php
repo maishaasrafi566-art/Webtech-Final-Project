@@ -1,4 +1,61 @@
+<?php
+include("../config/db.php");
 
+$error = "";
+$success = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $name    = trim($_POST['name'] ?? '');
+    $email   = trim($_POST['email'] ?? '');
+    $phone   = trim($_POST['phone'] ?? '');
+    $address = trim($_POST['address'] ?? '');
+    $gender  = $_POST['gender'] ?? '';
+    $dob     = $_POST['dob'] ?? '';
+    $role    = $_POST['role'] ?? 'employee';
+    $pass    = $_POST['password'] ?? '';
+    $confirm = $_POST['confirm_password'] ?? '';
+
+    if (!$name || !$email || !$pass || !$confirm) {
+        $error = "All required fields must be filled";
+    } elseif ($pass !== $confirm) {
+        $error = "Passwords do not match";
+    } else {
+
+        // Check if email exists
+        $check = mysqli_prepare($conn, "SELECT id FROM users WHERE email = ?");
+        mysqli_stmt_bind_param($check, "s", $email);
+        mysqli_stmt_execute($check);
+        mysqli_stmt_store_result($check);
+
+        if (mysqli_stmt_num_rows($check) > 0) {
+            $error = "Email already registered";
+        } else {
+
+            $hashed = password_hash($pass, PASSWORD_DEFAULT);
+
+            $stmt = mysqli_prepare(
+                $conn,
+                "INSERT INTO users 
+                (name, email, phone, address, gender, dob, role, password)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+            );
+
+            mysqli_stmt_bind_param(
+                $stmt,
+                "ssssssss",
+                $name, $email, $phone, $address, $gender, $dob, $role, $hashed
+            );
+
+            if (mysqli_stmt_execute($stmt)) {
+                $success = "Registration successful! You can login now.";
+            } else {
+                $error = "Registration failed. Try again.";
+            }
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,3 +122,4 @@
 
 </body>
 </html>
+
