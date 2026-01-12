@@ -1,7 +1,7 @@
 <?php
 include("../config/db.php");
 
-
+$error = "";
 $success = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
