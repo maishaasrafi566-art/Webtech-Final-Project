@@ -74,3 +74,35 @@ body {
 }
 
 
+.error-msg {
+    background: #ffe1e1;
+    color: #c62828;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.success-msg {
+    background: #e6ffea;
+    color: #2e7d32;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+.forgot-links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.forgot-links a {
+    text-decoration: none;
+    color: #ff9800;
+}
+
+.forgot-links a:hover {
+    text-decoration: underline;
+}
