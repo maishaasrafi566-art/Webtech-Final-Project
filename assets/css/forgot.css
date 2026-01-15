@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9800, #ffc107);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.forgot-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.forgot-box {
+    width: 380px;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
