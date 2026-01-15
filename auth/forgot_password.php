@@ -1,3 +1,50 @@
+<?php
+include("../config/db.php");
+
+$error = "";
+$success = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $email    = trim($_POST['email'] ?? '');
+    $pass     = $_POST['password'] ?? '';
+    $confirm  = $_POST['confirm_password'] ?? '';
+
+    if (!$email || !$pass || !$confirm) {
+        $error = "All fields are required";
+    } elseif ($pass !== $confirm) {
+        $error = "Passwords do not match";
+    } else {
+
+        // Check email exists
+        $stmt = mysqli_prepare($conn, "SELECT id FROM users WHERE email = ?");
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+
+        if (mysqli_stmt_num_rows($stmt) === 1) {
+
+            $hashed = password_hash($pass, PASSWORD_DEFAULT);
+
+            $update = mysqli_prepare(
+                $conn,
+                "UPDATE users SET password = ? WHERE email = ?"
+            );
+            mysqli_stmt_bind_param($update, "ss", $hashed, $email);
+
+            if (mysqli_stmt_execute($update)) {
+                $success = "Password reset successful. You can login now.";
+            } else {
+                $error = "Something went wrong. Try again.";
+            }
+
+        } else {
+            $error = "Email not found";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
