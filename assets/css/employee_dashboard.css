@@ -16,11 +16,11 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
-    position: fixed; /* fixed header */
+    position: fixed; 
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* ensures dropdown is above everything */
+    z-index: 1000; 
 }
 
 
@@ -28,3 +28,23 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
+.profile-menu {
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+.user-name::after {
+    content: " ▼";
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+.profile-menu:hover .dropdown {
+    display: block;
+}
+
