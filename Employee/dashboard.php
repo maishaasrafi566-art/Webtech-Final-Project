@@ -30,14 +30,6 @@ $user = mysqli_fetch_assoc($result);
 
 <header class="dashboard-header">
     <div class="logo">ABC Solutions Limited</div>
-
-    <div class="profile-menu">
-        <span class="user-name"><?= htmlspecialchars($user['name']) ?></span>
-        <div class="dropdown">
-            <a href="../profile.php">Profile</a>
-            <a href="../auth/change_password.php">Change Password</a>
-            <a href="../auth/logout.php" class="logout">Logout</a>
-        </div>
     </div>
 </header>
 

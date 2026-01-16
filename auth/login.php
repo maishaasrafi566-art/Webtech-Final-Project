@@ -42,40 +42,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login | HRM System</title>
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
 
-    <h2>HRM Login</h2>
-    <p>Please login to continue</p>
+<div class="login-wrapper">
+    <div class="login-box">
 
-    <form method="POST">
-        <p>
-            <input type="email" name="email" placeholder="Email address" required>
-        </p>
+        <h2 class="login-title">HRM Login</h2>
+        <p class="login-subtitle">Please login to continue</p>
 
-        <p>
-            <input type="password" name="password" placeholder="Password" required>
-        </p>
+        <?php if ($error): ?>
+            <div class="error-msg"><?php echo $error; ?></div>
+        <?php endif; ?>
 
-        <p>
-            <button type="submit">Login</button>
-        </p>
-    </form>
+        <form method="POST" class="login-form">
+            <input class="form-input" type="email" name="email" placeholder="Email address" required>
+            <input class="form-input" type="password" name="password" placeholder="Password" required>
 
-    <p>
-        <a href="forgot_password.php">Forgot Password?</a>
-    </p>
+            <button class="login-btn" type="submit">Login</button>
+        </form>
 
-    <p>
-        <a href="register.php">Create New Account</a>
-    </p>
+        <div class="login-links">
+            <a href="forgot_password.php">Forgot Password?</a><br>
+            <a href="register.php">Create New Account</a>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
