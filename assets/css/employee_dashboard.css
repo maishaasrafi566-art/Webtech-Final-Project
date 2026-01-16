@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+
+.dashboard-header {
+    height: 60px;
+    background: #1a73e8;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed; /* fixed header */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* ensures dropdown is above everything */
+}
+
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
