@@ -1,3 +1,23 @@
+<?php
+session_start();
+include("../config/db.php");
+
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'employee') {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+
+
+$stmt = mysqli_prepare($conn, "SELECT name, email FROM users WHERE id = ?");
+mysqli_stmt_bind_param($stmt, "i", $user_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$user = mysqli_fetch_assoc($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
