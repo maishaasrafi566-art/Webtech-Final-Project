@@ -13,14 +13,14 @@ body {
     align-items: center;
 }
 
-/* WRAPPER */
+
 .register-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-/* BOX */
+
 .register-box {
     width: 430px;
     background: #ffffff;
@@ -30,7 +30,7 @@ body {
     text-align: center;
 }
 
-/* TITLES */
+
 .register-title {
     font-size: 24px;
     margin-bottom: 5px;
@@ -43,7 +43,7 @@ body {
     color: #666;
 }
 
-/* FORM */
+
 .register-form {
     margin-top: 10px;
 }
@@ -62,7 +62,7 @@ body {
     height: 70px;
 }
 
-/* BUTTON */
+
 .register-btn {
     width: 100%;
     padding: 10px;
@@ -79,7 +79,7 @@ body {
     background: #1e7e34;
 }
 
-/* MESSAGES */
+
 .error-msg {
     background: #ffe1e1;
     color: #c62828;
@@ -98,7 +98,7 @@ body {
     font-size: 14px;
 }
 
-/* LINKS */
+
 .register-links {
     margin-top: 15px;
     font-size: 14px;
