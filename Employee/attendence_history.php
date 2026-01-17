@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Attendance History</title>
+ <link rel="stylesheet" href="../assets/css/attendance_history.css">
    </head>
 <body>
 
