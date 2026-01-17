@@ -8,13 +8,10 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="dashboard-header">
     <div class="logo">ABC Solutions Limited</div>
 
    </header>
-
-<!-- MAIN -->
 <main class="dashboard-container">
     <h2>Welcome, <?= htmlspecialchars($user['name']) ?> 👋</h2>
     <p class="subtitle">Admin Dashboard</p>
