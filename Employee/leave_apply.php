@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Apply Leave | HRM</title>
+ <link rel="stylesheet" href="../assets/css/leave.css">
 </head>
 <body>
 
