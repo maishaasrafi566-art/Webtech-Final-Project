@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,6 @@ body {
     background: #f4f6f9;
 }
 
-/* HEADER */
 .dashboard-header {
     height: 60px;
     background: #1a73e8;
@@ -31,7 +30,7 @@ body {
     font-weight: bold;
 }
 
-/* PROFILE MENU */
+
 .profile-menu {
     position: relative;
     cursor: pointer;
