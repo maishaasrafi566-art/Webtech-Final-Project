@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Leave History | HRM</title>
+<link rel="stylesheet" href="../assets/css/leave.css">
+
 </head>
 <body>
 
