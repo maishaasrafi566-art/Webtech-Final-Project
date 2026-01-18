@@ -26,6 +26,12 @@ switch ($url) {
         (new AuthController())->logout();
         break;
 
+ case 'employee-dashboard':
+        (new EmployeeController())->dashboard();
+        break;
+
+
+
     default:
         echo "404 Page Not Found";
 }
