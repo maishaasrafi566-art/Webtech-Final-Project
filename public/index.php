@@ -14,6 +14,18 @@ switch ($url) {
         (new AuthController())->login();
         break;
 
+
+    case 'forgot':
+        (new AuthController())->forgot();
+        break;
+
+
+        break;
+
+    case 'logout':
+        (new AuthController())->logout();
+        break;
+
     default:
         echo "404 Page Not Found";
 }

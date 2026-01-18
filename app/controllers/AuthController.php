@@ -56,6 +56,45 @@ class AuthController
 
 
 
+    public function forgot()
+    {
+        $error = "";
+        $success = "";
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+            $email   = trim($_POST['email'] ?? '');
+            $pass    = $_POST['password'] ?? '';
+            $confirm = $_POST['confirm_password'] ?? '';
+
+            if (!$email || !$pass || !$confirm) {
+                $error = "All fields are required";
+
+            } elseif ($pass !== $confirm) {
+                $error = "Passwords do not match";
+
+            } else {
+
+                $userModel = new User($GLOBALS['conn']);
+
+                if (!$userModel->emailExists($email)) {
+                    $error = "Email not found";
+
+                } else {
+
+                    $hashed = password_hash($pass, PASSWORD_DEFAULT);
+
+                    if ($userModel->updatePassword($email, $hashed)) {
+                        $success = "Password reset successful. You can login now.";
+                    } else {
+                        $error = "Something went wrong. Try again.";
+                    }
+                }
+            }
+        }
+
+        require __DIR__ . "/../views/auth/forgot.php";
+    }
 
 
 
