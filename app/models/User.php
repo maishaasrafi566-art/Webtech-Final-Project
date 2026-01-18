@@ -1,0 +1,82 @@
+<?php
+
+class User
+{
+    private $conn;
+
+    public function __construct($db)
+    {
+        $this->conn = $db;
+    }
+
+
+   
+    public function emailExists($email)
+    {
+        $stmt = mysqli_prepare(
+            $this->conn,
+            "SELECT id FROM users WHERE email = ?"
+        );
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+
+        return mysqli_stmt_num_rows($stmt) > 0;
+    }
+
+    
+    public function register($data)
+    {
+        $stmt = mysqli_prepare(
+            $this->conn,
+            "INSERT INTO users 
+            (name, email, phone, address, gender, dob, role, password)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+        );
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ssssssss",
+            $data['name'],
+            $data['email'],
+            $data['phone'],
+            $data['address'],
+            $data['gender'],
+            $data['dob'],
+            $data['role'],
+            $data['password']
+        );
+
+        return mysqli_stmt_execute($stmt);
+    }
+
+
+
+
+
+
+
+
+
+    public function getAllEmployees()
+    {
+        $stmt = mysqli_prepare($this->conn, "SELECT * FROM users WHERE role='employee' ORDER BY name ASC");
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        $employees = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $employees[] = $row;
+        }
+
+        return $employees;
+    }
+
+
+
+
+
+
+
+
+}
