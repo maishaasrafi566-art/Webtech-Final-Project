@@ -22,6 +22,11 @@ switch ($url) {
         (new AuthController())->changePassword();
         break;
 
+case 'admin-dashboard':
+    (new AdminController())->dashboard();
+    break;
+
+
     default:
         echo "404 Page Not Found";
 }
