@@ -9,8 +9,20 @@ class User
         $this->conn = $db;
     }
 
+    // LOGIN
+    public function getUserByEmail($email)
+    {
+        $stmt = mysqli_prepare(
+            $this->conn,
+            "SELECT id, role, password FROM users WHERE email = ?"
+        );
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
 
-   
+        return mysqli_stmt_get_result($stmt);
+    }
+
+    // REGISTER / FORGOT
     public function emailExists($email)
     {
         $stmt = mysqli_prepare(
@@ -24,7 +36,7 @@ class User
         return mysqli_stmt_num_rows($stmt) > 0;
     }
 
-    
+    // REGISTER
     public function register($data)
     {
         $stmt = mysqli_prepare(
