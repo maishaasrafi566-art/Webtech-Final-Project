@@ -44,6 +44,11 @@ case 'leave-history':
     (new LeaveController())->history();
     break;
 
+case 'profile':
+    (new ProfileController())->index();
+    break;
+
+
 
     default:
         echo "404 Page Not Found";
