@@ -40,6 +40,9 @@ case 'attendance-history':
 case 'leave-apply':
     (new LeaveController())->apply();
     break;
+case 'leave-history':
+    (new LeaveController())->history();
+    break;
 
 
     default:
