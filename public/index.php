@@ -27,6 +27,20 @@ case 'admin-dashboard':
     break;
 
 
+case 'admin-attendance':
+    (new AdminController())->attendance();
+    break;
+case 'admin-leaves':
+    (new AdminController())->leaveRequests();
+    break;
+case 'admin-view-employee':
+    (new AdminController())->viewEmployee();
+    break;
+case 'admin-employees':
+    (new AdminController())->employees();
+    break;
+
+
     default:
         echo "404 Page Not Found";
 }
