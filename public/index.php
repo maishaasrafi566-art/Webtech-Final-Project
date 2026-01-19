@@ -33,6 +33,10 @@ switch ($url) {
 case 'attendance':
     (new AttendanceController())->punch();
     break;
+case 'attendance-history':
+    (new AttendanceController())->history();
+    break;
+
 
 
     default:
