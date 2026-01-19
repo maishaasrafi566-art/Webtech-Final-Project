@@ -30,6 +30,9 @@ switch ($url) {
         (new EmployeeController())->dashboard();
         break;
 
+case 'attendance':
+    (new AttendanceController())->punch();
+    break;
 
 
     default:
