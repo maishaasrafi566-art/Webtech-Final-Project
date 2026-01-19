@@ -37,6 +37,9 @@ case 'attendance-history':
     (new AttendanceController())->history();
     break;
 
+case 'leave-apply':
+    (new LeaveController())->apply();
+    break;
 
 
     default:
