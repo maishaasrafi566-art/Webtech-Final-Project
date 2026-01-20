@@ -9,7 +9,8 @@ class User
         $this->conn = $db;
     }
 
-        public function getUserByEmail($email)
+    // LOGIN
+    public function getUserByEmail($email)
     {
         $stmt = mysqli_prepare(
             $this->conn,
@@ -21,11 +22,48 @@ class User
         return mysqli_stmt_get_result($stmt);
     }
 
+    // REGISTER / FORGOT
+    public function emailExists($email)
+    {
+        $stmt = mysqli_prepare(
+            $this->conn,
+            "SELECT id FROM users WHERE email = ?"
+        );
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
 
+        return mysqli_stmt_num_rows($stmt) > 0;
+    }
 
+    // REGISTER
+    public function register($data)
+    {
+        $stmt = mysqli_prepare(
+            $this->conn,
+            "INSERT INTO users 
+            (name, email, phone, address, gender, dob, role, password)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+        );
 
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ssssssss",
+            $data['name'],
+            $data['email'],
+            $data['phone'],
+            $data['address'],
+            $data['gender'],
+            $data['dob'],
+            $data['role'],
+            $data['password']
+        );
 
-       public function updatePassword($email, $hashedPassword)
+        return mysqli_stmt_execute($stmt);
+    }
+
+    // FORGOT PASSWORD
+    public function updatePassword($email, $hashedPassword)
     {
         $stmt = mysqli_prepare(
             $this->conn,
@@ -41,6 +79,17 @@ class User
 
 
 
+public function getPasswordById($userId)
+{
+    $stmt = mysqli_prepare(
+        $this->conn,
+        "SELECT password FROM users WHERE id = ?"
+    );
+    mysqli_stmt_bind_param($stmt, "i", $userId);
+    mysqli_stmt_execute($stmt);
+
+    return mysqli_stmt_get_result($stmt);
+}
 
 public function updatePasswordById($userId, $hashedPassword)
 {
@@ -53,7 +102,19 @@ public function updatePasswordById($userId, $hashedPassword)
     return mysqli_stmt_execute($stmt);
 }
 
+    public function getAllEmployees()
+    {
+        $stmt = mysqli_prepare($this->conn, "SELECT * FROM users WHERE role='employee' ORDER BY name ASC");
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
+        $employees = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $employees[] = $row;
+        }
+
+        return $employees;
+    }
 
 
 public function getById($id)
