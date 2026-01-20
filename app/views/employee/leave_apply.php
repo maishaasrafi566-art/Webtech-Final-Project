@@ -34,7 +34,7 @@
             <label>Reason</label>
             <textarea name="reason" required></textarea>
 
-            <label>Emergency Name</label>
+            <label>Emergency Address</label>
             <input type="text" name="ename" required>
 
             <label>Emergency Phone</label>
