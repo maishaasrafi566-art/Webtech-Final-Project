@@ -1,5 +1,4 @@
 <?php
-
 class Attendance
 {
     private $conn;
@@ -11,6 +10,7 @@ class Attendance
 
     public function punchIn($user_id, $work_type)
     {
+       
         $stmt = mysqli_prepare($this->conn, "
             SELECT id FROM attendance
             WHERE user_id=? AND DATE(punch_in)=CURDATE()
@@ -20,6 +20,7 @@ class Attendance
         $result = mysqli_stmt_get_result($stmt);
 
         if (mysqli_num_rows($result) === 0) {
+         
             $currentTime = date("H:i:s");
             $status = ($currentTime <= "09:15:00") ? "In-Time" : "Late";
 
@@ -28,8 +29,12 @@ class Attendance
                 VALUES (?, NOW(), ?, ?)
             ");
             mysqli_stmt_bind_param($stmt_insert, "iss", $user_id, $work_type, $status);
-            mysqli_stmt_execute($stmt_insert);
-            return "Punch In successful ($status)";
+            
+            if (mysqli_stmt_execute($stmt_insert)) {
+                return "Punch In successful ($status)";
+            } else {
+                return "Error: " . mysqli_error($this->conn);
+            }
         } else {
             return "Already punched in today";
         }
@@ -37,15 +42,32 @@ class Attendance
 
     public function punchOut($user_id)
     {
-        $stmt = mysqli_prepare($this->conn, "
-            UPDATE attendance
-            SET punch_out=NOW()
-            WHERE user_id=? AND DATE(punch_in)=CURDATE()
-            ORDER BY id DESC LIMIT 1
+        
+        $check = mysqli_prepare($this->conn, "
+            SELECT id FROM attendance 
+            WHERE user_id=? AND DATE(punch_in)=CURDATE() AND punch_out IS NULL
         ");
-        mysqli_stmt_bind_param($stmt, "i", $user_id);
-        mysqli_stmt_execute($stmt);
-        return "Punch Out successful";
+        mysqli_stmt_bind_param($check, "i", $user_id);
+        mysqli_stmt_execute($check);
+        $result = mysqli_stmt_get_result($check);
+
+        if (mysqli_num_rows($result) > 0) {
+            $stmt = mysqli_prepare($this->conn, "
+                UPDATE attendance
+                SET punch_out=NOW()
+                WHERE user_id=? AND DATE(punch_in)=CURDATE() AND punch_out IS NULL
+                ORDER BY punch_in DESC LIMIT 1
+            ");
+            mysqli_stmt_bind_param($stmt, "i", $user_id);
+            
+            if (mysqli_stmt_execute($stmt)) {
+                return "Punch Out successful";
+            } else {
+                return "Error: " . mysqli_error($this->conn);
+            }
+        } else {
+            return "No active punch in found";
+        }
     }
 
     public function getTodayAttendance($user_id)
@@ -61,7 +83,7 @@ class Attendance
         return mysqli_fetch_assoc($result);
     }
 
-       public function getAttendanceHistory($user_id)
+    public function getAttendanceHistory($user_id)
     {
         $stmt = mysqli_prepare($this->conn, "
             SELECT * FROM attendance
