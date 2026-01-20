@@ -1,0 +1,320 @@
+
+* {/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    padding: 20px;
+}
+
+.dashboard-header {
+    height: 60px;
+    background: #1a73e8;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-name::after {
+    content: " ▼";
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+.profile-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: #ffffff;
+    width: 180px;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown a:hover {
+    background: #f1f1f1;
+}
+
+.dropdown .logout {
+    color: #d32f2f;
+}
+
+.dashboard-container {
+    padding: 100px 30px 30px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.table-card {
+    background: #fefefe;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #1a73e8;
+    color: #fff;
+}
+
+table tbody tr:hover {
+    background: #e3f2fd;
+}
+
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+.status-approved {
+    color: green;
+    font-weight: bold;
+}
+.status-rejected {
+    color: red;
+    font-weight: bold;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.approve-btn {
+    background: #4caf50;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.approve-btn:hover {
+    background-color: #43a047;
+}
+
+.reject-btn {
+    background: #f44336;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.reject-btn:hover {
+    background-color: #e53935;
+}
+
+@media(max-width: 768px) {
+    table th, table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    padding: 20px;
+}
+
+.dashboard-header {
+    height: 60px;
+    background: #1a73e8;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-name::after {
+    content: " ▼";
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+.profile-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: #ffffff;
+    width: 180px;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown a:hover {
+    background: #f1f1f1;
+}
+
+.dropdown .logout {
+    color: #d32f2f;
+}
+
+.dashboard-container {
+    padding: 100px 30px 30px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.table-card {
+    background: #fefefe;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #1a73e8;
+    color: #fff;
+}
+
+table tbody tr:hover {
+    background: #e3f2fd;
+}
+
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+.status-approved {
+    color: green;
+    font-weight: bold;
+}
+.status-rejected {
+    color: red;
+    font-weight: bold;
+}
+
+
+.approve-btn {
+    background: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.reject-btn {
+    background: #f44336;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+@media(max-width: 768px) {
+    table th, table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
