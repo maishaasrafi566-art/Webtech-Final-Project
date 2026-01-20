@@ -33,7 +33,7 @@
         <?php endforeach; ?>
     </table>
 
-    <a href="/hrm_project/public/index.php?url=employee-dashboard">⬅ Back to Dashboard</a>
+    <a href="/WebTech Final Project/public/index.php?url=employee-dashboard">⬅ Back to Dashboard</a>
 </div>
 
 </body>

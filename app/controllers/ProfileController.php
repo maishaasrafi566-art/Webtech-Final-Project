@@ -8,7 +8,7 @@ class ProfileController
         if (session_status() === PHP_SESSION_NONE) session_start();
 
         if (!isset($_SESSION['user_id'])) {
-            header("Location: /hrm_project/public/index.php?url=login");
+            header("Location: /WebTech Final Project/public/index.php?url=login");
             exit;
         }
 

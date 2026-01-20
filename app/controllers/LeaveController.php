@@ -7,7 +7,7 @@ class LeaveController
     {
         if (session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'employee') {
-            header("Location: /hrm_project/public/index.php?url=login");
+            header("Location: /WebTech Final Project/public/index.php?url=login");
             exit;
         }
 
@@ -55,7 +55,7 @@ class LeaveController
     {
         if (session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'employee') {
-            header("Location: /hrm_project/public/index.php?url=login");
+            header("Location: /WebTech Final Project/public/index.php?url=login");
             exit;
         }
 

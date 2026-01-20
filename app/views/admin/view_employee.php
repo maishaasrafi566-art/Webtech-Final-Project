@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>View Employee | Admin</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/admin_view_employee.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/admin_view_employee.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
         <p><strong>Gender:</strong> <?= htmlspecialchars($employee['gender'] ?? '-') ?></p>
     </div>
 
-    <a href="/hrm_project/public/index.php?url=admin-employees">⬅ Back to Employee List</a>
+    <a href="/WebTech Final Project/public/index.php?url=admin-employees">⬅ Back to Employee List</a>
 </main>
 
 </body>

@@ -1,12 +1,11 @@
 <?php
-// $history comes from controller
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Leave History | HRM</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/leave.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/leave.css">
 </head>
 <body>
 
@@ -41,7 +40,7 @@
             </tbody>
         </table>
 
-        <a href="/hrm_project/public/index.php?url=employee-dashboard">⬅ Back to Dashboard</a>
+        <a href="/WebTech Final Project/public/index.php?url=employee-dashboard">⬅ Back to Dashboard</a>
     </div>
 </div>
 

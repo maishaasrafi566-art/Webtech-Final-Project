@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Change Password | HRM System</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/change_password.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/change_password.css">
 </head>
 <body>
 
@@ -34,7 +34,7 @@
             <button type="submit">Update Password</button>
         </form>
 
-        <a href="/hrm_project/public/index.php?url=employee/dashboard">
+        <a href="/WebTech Final Project/public/index.php?url=employee-dashboard">
             ⬅ Back to Dashboard
         </a>
 

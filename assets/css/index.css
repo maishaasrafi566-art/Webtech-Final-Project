@@ -1,4 +1,4 @@
-
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-
+/* HERO BACKGROUND */
 .hero {
     height: 100vh;
     background: linear-gradient(
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-
+/* OVERLAY CONTENT */
 .hero-content {
     text-align: center;
     color: #ffffff;
@@ -29,7 +29,7 @@
     padding: 30px;
 }
 
-
+/* TEXT STYLES */
 .company-name {
     font-size: 40px;
     margin-bottom: 10px;
@@ -47,7 +47,7 @@
     line-height: 1.6;
 }
 
-
+/* BUTTONS */
 .hero-buttons {
     margin-bottom: 15px;
 }
@@ -75,7 +75,7 @@
     opacity: 0.9;
 }
 
-
+/* FORGOT PASSWORD */
 .forgot-link a {
     color: #ffffff;
     font-size: 14px;

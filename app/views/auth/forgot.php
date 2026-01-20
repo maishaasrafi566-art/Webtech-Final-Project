@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Forgot Password | HRM System</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/forgot.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/forgot.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
         <?php if (!empty($success)): ?>
             <div class="success-msg">
                 <?php echo $success; ?><br>
-                <a href="/hrm_project/public/index.php?url=login">Go to Login</a>
+                <a href="/WebTech Final Project/public/index.php?url=login">Go to Login</a>
             </div>
         <?php endif; ?>
 
@@ -39,7 +39,7 @@
         </form>
 
         <div class="forgot-links">
-            <a href="/hrm_project/public/index.php?url=login">Back to Login</a>
+            <a href="/WebTech Final Project//public/index.php?url=login">Back to Login</a>
         </div>
 
     </div>

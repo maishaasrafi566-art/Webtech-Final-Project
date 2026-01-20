@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Admin Attendance</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/admin_attendance.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/admin_attendance.css">
 </head>
 <body>
 
@@ -30,8 +30,8 @@
             <td class="<?= strtolower($row['status']) ?>"><?= $row['status'] ?></td>
             <td>
                 <?php if ($row['status'] === 'Pending'): ?>
-                    <a href="/hrm_project/public/index.php?url=admin-attendance&mark=On-Time&id=<?= $row['id'] ?>" class="btn-approve">On-Time</a>
-                    <a href="/hrm_project/public/index.php?url=admin-attendance&mark=Late&id=<?= $row['id'] ?>" class="btn-reject">Late</a>
+                    <a href="/WebTech Final Project/public/index.php?url=admin-attendance&mark=On-Time&id=<?= $row['id'] ?>" class="btn-approve">On-Time</a>
+                    <a href="/WebTech Final Project/public/index.php?url=admin-attendance&mark=Late&id=<?= $row['id'] ?>" class="btn-reject">Late</a>
                 <?php else: ?>
                     Reviewed
                 <?php endif; ?>

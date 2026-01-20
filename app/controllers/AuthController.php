@@ -32,9 +32,9 @@ class AuthController
 
 
                         if ($user['role'] === 'admin') {
-                            header("Location: /hrm_project/public/index.php?url=admin-dashboard");
+                            header("Location: /WebTech Final Project/public/index.php?url=admin-dashboard");
                         } else {
-                            header("Location: /hrm_project/public/index.php?url=employee-dashboard");
+                            header("Location: /WebTech Final Project/public/index.php?url=employee-dashboard");
                         }
                         exit;
 
@@ -130,7 +130,7 @@ class AuthController
 public function changePassword()
 {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: /hrm_project/public/index.php?url=login");
+        header("Location: /WebTech Final Project/public/index.php?url=login");
         exit;
     }
 
@@ -191,7 +191,7 @@ public function logout()
     session_unset();
     session_destroy();
 
-    header("Location: /hrm_project/public/index.php?url=login");
+    header("Location: /WebTech Final Project/public/index.php?url=login");
     exit;
 }
 

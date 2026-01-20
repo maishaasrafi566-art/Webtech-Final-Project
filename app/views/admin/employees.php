@@ -29,7 +29,7 @@
                         <td><?= htmlspecialchars($emp['NAME'] ?? '-') ?></td>
                         <td><?= htmlspecialchars($emp['email'] ?? '-') ?></td>
                         <td>
-                            <a href="/hrm_project/public/index.php?url=admin-view-employee&id=<?= $emp['id'] ?>" class="view-btn">
+                            <a href="/WebTech Final Project/public/index.php?url=admin-view-employee&id=<?= $emp['id'] ?>" class="view-btn">
                                 View
                             </a>
                         </td>
@@ -39,7 +39,7 @@
         </table>
     </div>
 
-    <a href="/hrm_project/public/index.php?url=admin-dashboard">⬅ Back to Dashboard</a>
+    <a href="/WebTech Final Project/public/index.php?url=admin-dashboard">⬅ Back to Dashboard</a>
 </main>
 
 </body>

@@ -29,9 +29,9 @@ class Attendance
             ");
             mysqli_stmt_bind_param($stmt_insert, "iss", $user_id, $work_type, $status);
             mysqli_stmt_execute($stmt_insert);
-            return "✅ Punch In successful ($status)";
+            return "Punch In successful ($status)";
         } else {
-            return "⚠️ Already punched in today";
+            return "Already punched in today";
         }
     }
 
@@ -45,7 +45,7 @@ class Attendance
         ");
         mysqli_stmt_bind_param($stmt, "i", $user_id);
         mysqli_stmt_execute($stmt);
-        return "✅ Punch Out successful";
+        return "Punch Out successful";
     }
 
     public function getTodayAttendance($user_id)

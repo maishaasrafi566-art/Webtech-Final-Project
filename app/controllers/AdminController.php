@@ -10,7 +10,7 @@ class AdminController
         }
 
         if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-            header("Location: /hrm_project/public/index.php?url=login");
+            header("Location: /WebTech Final Project/public/index.php?url=login");
             exit;
         }
 
@@ -32,7 +32,7 @@ class AdminController
         }
 
         if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-            header("Location: /hrm_project/public/index.php?url=login");
+            header("Location: /WebTech Final Project/public/index.php?url=login");
             exit;
         }
 
@@ -43,7 +43,7 @@ class AdminController
             $id = intval($_GET['id']);
             $status = $_GET['mark'];
             $attendanceModel->updateStatus($id, $status);
-            header("Location: /hrm_project/public/index.php?url=admin-attendance");
+            header("Location: /WebTech Final Project/public/index.php?url=admin-attendance");
             exit;
         }
 
@@ -61,7 +61,7 @@ class AdminController
         }
 
         if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-            header("Location: /hrm_project/public/index.php?url=login");
+            header("Location: /WebTech Final Project/public/index.php?url=login");
             exit;
         }
 
@@ -71,14 +71,14 @@ class AdminController
         if (isset($_GET['approve']) && isset($_GET['id'])) {
             $id = intval($_GET['id']);
             $leaveModel->updateStatus($id, 'Approved');
-            header("Location: /hrm_project/public/index.php?url=admin-leaves");
+            header("Location: /WebTech Final Project/public/index.php?url=admin-leaves");
             exit;
         }
 
         if (isset($_GET['reject']) && isset($_GET['id'])) {
             $id = intval($_GET['id']);
             $leaveModel->updateStatus($id, 'Rejected');
-            header("Location: /hrm_project/public/index.php?url=admin-leaves");
+            header("Location: /WebTech Final Project/public/index.php?url=admin-leaves");
             exit;
         }
 
@@ -94,7 +94,7 @@ public function viewEmployee()
     }
 
     if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-        header("Location: /hrm_project/public/index.php?url=login");
+        header("Location: /WebTech Final Project/public/index.php?url=login");
         exit;
     }
 
@@ -118,7 +118,7 @@ public function employees()
     }
 
     if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-        header("Location: /hrm_project/public/index.php?url=login");
+        header("Location: /WebTech Final Project/public/index.php?url=login");
         exit;
     }
 

@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if(!validateLeaveForm()) return;
 
             const formData = new FormData(this);
-            fetch("/hrm_project/public/index.php?url=leave-apply", {
+            fetch("/WebTech Final Project/public/index.php?url=leave-apply", {
                 method: "POST",
                 body: formData,
                 headers: {'X-Requested-With':'XMLHttpRequest'}
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         attendanceForm.addEventListener("submit", function(e){
             e.preventDefault();
             const formData = new FormData(this);
-            fetch("/hrm_project/public/index.php?url=attendance", {
+            fetch("/WebTech Final Project/public/index.php?url=attendance", {
                 method: "POST",
                 body: formData,
                 headers: {'X-Requested-With':'XMLHttpRequest'}

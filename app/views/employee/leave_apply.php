@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Apply Leave | HRM</title>
-<link rel="stylesheet" href="/hrm_project/assets/css/leave.css">
-<script src="/hrm_project/assets/js/script.js"></script>
+<link rel="stylesheet" href="/WebTech Final Project/assets/css/leave.css">
+<script src="/WebTech Final Project/assets/js/script.js"></script>
 </head>
 <body>
 

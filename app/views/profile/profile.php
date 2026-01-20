@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My Profile | HRM</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/profile.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/profile.css">
 </head>
 <body>
 <header class="dashboard-header">

@@ -5,7 +5,7 @@
     <title>Login | HRM System</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/hrm_project/assets/css/login.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/login.css">
 </head>
 <body>
 
@@ -27,8 +27,8 @@
         </form>
 
         <div class="login-links">
-            <a href="/hrm_project/auth/forgot_password.php">Forgot Password?</a><br>
-            <a href="/hrm_project/auth/register.php">Create New Account</a>
+            <a href="/WebTech Final Project/app/views/auth/forgot.php">Forgot Password?</a><br>
+            <a href="/WebTech Final Project/app/views/auth/register.php">Create New Account</a>
         </div>
 
     </div>

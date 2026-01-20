@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Leave Requests | Admin</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/admin_leave.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/admin_leave.css">
 </head>
 <body>
 
@@ -49,8 +49,8 @@
                     <td>
                         <?php if(($row['status'] ?? 'Pending') === 'Pending'): ?>
                             <div class="action-buttons">
-                                <a href="/hrm_project/public/index.php?url=admin-leaves&approve=1&id=<?= $row['id'] ?>" class="approve-btn">Approve</a>
-                                <a href="/hrm_project/public/index.php?url=admin-leaves&reject=1&id=<?= $row['id'] ?>" class="reject-btn">Reject</a>
+                                <a href="/WebTech Final Project/public/index.php?url=admin-leaves&approve=1&id=<?= $row['id'] ?>" class="approve-btn">Approve</a>
+                                <a href="/WebTech Final Project/public/index.php?url=admin-leaves&reject=1&id=<?= $row['id'] ?>" class="reject-btn">Reject</a>
                             </div>
                         <?php else: ?>
                             -

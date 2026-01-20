@@ -9,7 +9,7 @@ class AdminLeave
         $this->conn = $db;
     }
 
-    // Fetch all leave requests
+   
     public function getAllLeaves()
     {
         $stmt = mysqli_prepare(
@@ -30,7 +30,7 @@ class AdminLeave
         return $leaves;
     }
 
-    // Update leave status
+    
     public function updateStatus($id, $status)
     {
         $stmt = mysqli_prepare(

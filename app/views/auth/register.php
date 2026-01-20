@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register | HRM System</title>
-    <link rel="stylesheet" href="/hrm_project/assets/css/register.css">
+    <link rel="stylesheet" href="/WebTech Final Project/assets/css/register.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
         <?php if (!empty($success)): ?>
             <div class="success-msg">
                 <?php echo $success; ?><br>
-                <a href="/hrm_project/public/index.php?url=login">Login Now</a>
+                <a href="/WebTech Final Project/public/index.php?url=login">Login Now</a>
             </div>
         <?php endif; ?>
 
@@ -53,7 +53,7 @@
         </form>
 
         <div class="register-links">
-            <a href="/hrm_project/public/index.php?url=login">
+            <a href="/WebTech Final Project/public/index.php?url=login">
                 Already have an account? Login
             </a>
         </div>
